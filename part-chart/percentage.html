@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+  <meta charset="utf-8">
+<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+
+window.onload = function () {
+
+var i;
+
+var  dataPoints = [
+   { label: "本庁舎",  y: 21238.57  },
+   { label: "その他の行政機関", y: 27962.47  },
+   { label: "学校", y: 728109.17  },
+   { label: "公営住宅",  y: 182275.41  },
+   { label: "公園",  y: 3452579.57  },
+   { label: "その他の施設",  y: 2261573.55  },
+   { label: "宅地建物",  y: 130170.16  },
+   { label: "田畑",  y: 640387.13  },
+   { label: "山林",  y: 47795499.99  },
+   { label: "原野",  y: 50716.63  },
+   { label: "雑種地",  y: 164936.99  },
+   { label: "墓地",  y:  10154.16 },
+   { label: "池沼",  y: 211715  }
+ ];
+ for(i=0;i<dataPoints.length;i++){
+   dataPoints[i].y=dataPoints[i].y/55677318.8*100;
+ }
+	var chart = new CanvasJS.Chart("chartContainer", {
+		theme: "theme2",//theme1
+		title:{
+			text: "津山市私有財産割合"
+		},
+		animationEnabled: false,   // change to true
+		 data : [
+		{
+			// Change type to "bar", "area", "spline", "pie",etc.
+			type: "pie",
+      dataPoints:dataPoints
+		}
+		]
+	});
+
+	chart.render();
+}
+
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 50%;"></div>
+
+<pre><img src="https://komtmt.files.wordpress.com/2015/04/by.png" width="75px" alt="CC BY" title="CC BY  "> Tuyama City</pre>
+</body>
+</html>

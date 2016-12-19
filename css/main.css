@@ -1,0 +1,14 @@
+body{
+  background-color: #eee;
+}
+
+.graphSection{
+  background-color: white;
+  box-shadow: 0px 0px 10px #333;
+  margin-bottom: 50px;
+}
+
+article{
+  width: 100px;
+  height: 300px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script></head>
+<body style="background-color: #333;">
+  <script type="text/javascript">
+    window.onload = function () {
+      var chart = new CanvasJS.Chart("chartContainer",
+      {
+        title:{
+        text: "二酸化炭素増加比"
+        },
+        data: [
+        {
+          type: "column",
+          dataPoints: [
+          {label: "津山市", y: 5.27},
+          {label: "岡山県", y: 73.91751132}
+          ]
+        }
+        ]
+      });
+
+      chart.render();
+    }
+  </script>
+
+  <article style="background-color: white;">
+    <div id="chartContainer" style="height: 500px; width: 50%;"></div>
+  </article>
+
+  <pre><img src="https://komtmt.files.wordpress.com/2015/04/by.png" alt="CC BY" style="width: 75px;" title="クリエイティブ・コモンズ"> Tsuyama City</pre>
+</body>
+</html>
