@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>面積を比較してみる</title>
+    </head>
+    <body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <p>
+    津山市の面積...506㎢<br>
+    宅地建物 130170.16㎡<br>
+    田畑 640387.13㎡<br>
+    山林	47795499.99㎡<br>
+    原野 50716.63㎡<br>
+    雑種地	164936.99㎡<br>
+    墓地 10154.16㎡<br>
+    池沼 211715.00㎡<br>
+    </p>
+    <p>
+    ここでは、入力された面積について津山市内それぞれの私有財産が何個分あるかを表示します。 <br>
+    東京ドーム〇個分という表現よりわかりやすいかも！？
+    </p>
+
+    <label>
+    入力したい面積→
+    </label>
+    <input type="number" name="area" id="areaid">
+    <select name="単位" id="tani">
+      <option value="km2">㎢</option>
+      <option value="m2">㎡</option>
+    </select>
+    <input type="submit" value="比較" id="hikaku">
+    <input type="reset" id="resetbutton">
+
+
+    <p>
+    入力例<br>
+    <input type="submit" value="日本の面積" id="japanarea">
+    <input type="submit" value="岡山県の面積" id="okayamakenarea">
+    <input type="submit" value="岡山市の面積" id="okayamashiarea">
+    <input type="submit" value="倉敷市の面積" id="kurashikishiarea">
+    <input type="submit" value="琵琶湖の面積" id="biwakoarea">
+    </p>
+
+    <ul>
+    <li><label>津山市</label><input type="text" id="tsuyamaarea"></li>
+    <li><label>宅地建物</label><input type="text" id="takuchiarea"></li>
+    <li><label>田畑</label><input type="text" id="tabataarea"></li>
+    <li><label>山林</label><input type="text" id="yamabayashiarea"></li>
+    <li><label>原野</label><input type="text" id="haranoarea"></li>
+    <li><label>雑種地</label><input type="text" id="zasshuchiarea"></li>
+    <li><label>墓地</label><input type="text" id="bochiarea"></li>
+    <li><label>池沼</label><input type="text" id="chishouarea"></li>
+    </ul>
+
+    <div style="position: relative; width: 500px; height: 100%;" id="chartContainer"></div>
+
+    <script src="app.js"></script>
+    </body>
+</html>

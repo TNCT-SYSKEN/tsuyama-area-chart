@@ -6,32 +6,107 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stypesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.3.1/vegas.min.css">
   </head>
   <body>
-    <nav class="col-sm-12"></nav>
+    <!-- ヘッダ -->
+    <header>
+      <img class="header" src="./resources/office-933306_1920.png">
+    </header>
 
     <div class="container">
       <!-- データ本文 -->
-      <section class="col-sm-12 graphSection">
-        <article class="col-sm-12" id="environmentContainer"></article>
+      <article class="col-sm-12 graphSection" id="enviroSection">
+        <graph class="col-sm-12" id="enviroContainer"></graph>
 
         <p>津山市と岡山県の二酸化炭素増加比の比較です。</p>
         <p>使用したデータは，こちらから(ほげほげほげほげ)</p>
-      </section>
+      </article>
 
-      <section class="col-sm-12 graphSection">
-        <article class="col-sm-12" id="percentContainer"></article>
+      <article class="col-sm-12 graphSection" id="percentSection">
+        <graph class="col-sm-12" id="percentContainer"></graph>
 
         <p>津山市私有財産の割合をほげほげ</p>
         <p>使用したデータは，ほげほげほげほげ</p>
-      </section>
+      </article>
 
-      <section class="col-sm-12 graphSection">
-        <article class="col-sm-12" id="vsContainer"></article>
+      <article class="col-sm-12 graphSection" id="vsSection">
+        <graph class="col-sm-12" id="vsContainer"></graph>
 
         <p>津山市と日本について様々な数値で対決させてみました。</p>
-        <p>使用したデータは，ほげほげほげほげ〜です</p>
-      </section>
+        <label>参考文献</label>
+        <ul>
+          <li>津山市オープンデータページ | 津山市公式サイト</li>
+          <li>https://www.city.tsuyama.lg.jp/life/index2.php?id=5530</li>
+          <li>統計表一覧　政府統計の総合窓口　GL08020103</li>
+          <li>http://www.e-stat.go.jp/SG1/estat/List.do?bid=000001053739&</li>
+          <li>国債及び借入金並びに政府保証債務現在高（平成26年12月末現在） : 財務省</li>
+          <li>http://www.mof.go.jp/jgbs/reference/gbb/201412.html</li>
+          <li>使用データ</li>
+          <li>津山市_面積_2015分_20161201[12KB Excelファイル]</li>
+          <li>https://www.city.tsuyama.lg.jp/common/photo/free/files/8647/tsuyamashi_menseki_2015.xlsx</li>
+          <li>津山市_人口動態_2015分_20161201[45KB Excelファイル]</li>
+          <li>https://www.city.tsuyama.lg.jp/common/photo/free/files/8647/tsuyamashi_jinkodoutai_2015.xlsx</li>
+          <li>津山市_市債借入状況_2015分_20161201[14KB Excelファイル]</li>
+          <li>https://www.city.tsuyama.lg.jp/common/photo/free/files/8647/tsuyamashi_shisaikariire_2015.xlsx</li>
+          <li>人口，人口増減，面積及び人口密度－全国（大正９年～平成22年）</li>
+          <li>http://www.e-stat.go.jp/SG1/estat/Xlsdl.do?sinfid=000025518674</li>
+          <li>面積，面積の割合及び人口密度－全国，市部，郡部（大正９年～平成22年）</li>
+          <li>http://www.e-stat.go.jp/SG1/estat/Xlsdl.do?sinfid=000025518676</li>
+          <li>国債及び借入金並びに政府保証債務現在高（平成26年12月末現在） : 財務省</li>
+          <li>http://www.mof.go.jp/jgbs/reference/gbb/201412.html</li>
+        </ul>
+      </article>
+
+      <article class="col-sm-12 graphSection" id="compareSection">
+        <ul>
+          <li>津山市の面積 506㎢</li>
+          <li>宅地建物 130170.16㎡</li>
+          <li>田畑 640387.13㎡</li>
+          <li>山林 47795499.99㎡</li>
+          <li>原野 50716.63㎡</li>
+          <li>雑種地 164936.99㎡</li>
+          <li>墓地 10154.16㎡</li>
+          <li>池沼 211715.00㎡</li>
+        </p>
+        <p>
+        ここでは、入力された面積について津山市内それぞれの私有財産が何個分あるかを表示します。 <br>
+        東京ドーム〇個分という表現よりわかりやすいかも！？
+        </p>
+
+        <label>
+        入力したい面積→
+        </label>
+        <input type="number" name="area" id="areaid">
+        <select name="単位" id="tani">
+          <option value="km2">㎢</option>
+          <option value="m2">㎡</option>
+        </select>
+        <input class="btn btn-primary" type="button" value="比較" id="hikaku">
+        <input class="btn btn-warning" type="button" value="リセット" id="resetbutton">
+
+        <section>
+          <label>入力例</label>
+          <input class="btn" type="button" value="日本の面積" id="japanarea">
+          <input class="btn" type="button" value="岡山県の面積" id="okayamakenarea">
+          <input class="btn" type="button" value="岡山市の面積" id="okayamashiarea">
+          <input class="btn" type="button" value="倉敷市の面積" id="kurashikishiarea">
+          <input class="btn" type="button" value="琵琶湖の面積" id="biwakoarea">
+        </section>
+
+        <ul>
+        <li><label>津山市</label><input type="text" id="tsuyamaarea"></li>
+        <li><label>宅地建物</label><input type="text" id="takuchiarea"></li>
+        <li><label>田畑</label><input type="text" id="tabataarea"></li>
+        <li><label>山林</label><input type="text" id="yamabayashiarea"></li>
+        <li><label>原野</label><input type="text" id="haranoarea"></li>
+        <li><label>雑種地</label><input type="text" id="zasshuchiarea"></li>
+        <li><label>墓地</label><input type="text" id="bochiarea"></li>
+        <li><label>池沼</label><input type="text" id="chishouarea"></li>
+        </ul>
+
+        <graph class="col-sm-12" id="compareContainer"></graph>
+      </article>
 
       <!-- ライセンス表記 -->
       <pre class="block-center col-sm-12"><img src="https://komtmt.files.wordpress.com/2015/04/by.png" alt="CC BY" style="width: 75px;" title="クリエイティブ・コモンズ"> 津山市</pre>

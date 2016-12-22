@@ -1,4 +1,5 @@
 body{
+  color: #333;
   background-color: #eee;
 }
 
@@ -8,7 +9,32 @@ body{
   margin-bottom: 50px;
 }
 
-article{
+graph{
   width: 100px;
   height: 300px;
+}
+
+.header{
+  width: 100%;
+  height: auto;
+}
+
+#enviroSection{
+  background-image: url('../resources/a30-sunbeams-1904485_1920.png');
+  background-size: 100% auto;
+}
+
+#percentSection{
+  background-image: url('../resources/a30-japan-217878_1920.png');
+  background-size: 100% auto;
+}
+
+#vsSection{
+  background-image: url('../resources/a30-boxing-gloves-1709174_1920.png');
+  background-size: auto 100%;
+}
+
+#compareSection{
+  background-image: url('../resources/a30-folding-rule-1329781_1920.png');
+  background-size: auto 100%;
 }
