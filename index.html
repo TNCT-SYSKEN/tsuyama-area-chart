@@ -16,21 +16,21 @@
     <div class="container">
       <!-- データ本文 -->
       <article class="col-sm-12 graphSection" id="enviroSection">
-        <graph class="col-sm-12" id="enviroContainer"></graph>
+        <figure class="col-sm-12" id="enviroContainer"></figure>
 
         <p>津山市と岡山県の二酸化炭素増加比の比較です。</p>
         <p>使用したデータは，こちらから(ほげほげほげほげ)</p>
       </article>
 
       <article class="col-sm-12 graphSection" id="percentSection">
-        <graph class="col-sm-12" id="percentContainer"></graph>
+        <figure class="col-sm-12" id="percentContainer"></figure>
 
         <p>津山市私有財産の割合をほげほげ</p>
         <p>使用したデータは，ほげほげほげほげ</p>
       </article>
 
       <article class="col-sm-12 graphSection" id="vsSection">
-        <graph class="col-sm-12" id="vsContainer"></graph>
+        <figure class="col-sm-12" id="vsContainer"></figure>
 
         <p>津山市と日本について様々な数値で対決させてみました。</p>
         <label>参考文献</label>
@@ -51,6 +51,9 @@
       </article>
 
       <article class="col-sm-12 graphSection" id="compareSection">
+        <p>ここでは、入力された面積について津山市内それぞれの私有財産が何個分あるかを表示します。</p>
+        <p>東京ドーム〇個分という表現よりわかりやすいかも！？</p>
+
         <ul>
           <li>津山市の面積 506km&sup2;</li>
           <li>宅地建物 130170.16m&sup2;</li>
@@ -61,16 +64,10 @@
           <li>墓地 10154.16m&sup2;</li>
           <li>池沼 211715.00m&sup2;</li>
         </p>
-        <p>
-        ここでは、入力された面積について津山市内それぞれの私有財産が何個分あるかを表示します。 <br>
-        東京ドーム〇個分という表現よりわかりやすいかも！？
-        </p>
 
-        <label>
-        入力したい面積→
-        </label>
+        <label>入力したい面積→</label>
         <input type="number" name="area" id="areaid">
-        <select name="単位" id="tani">
+        <select name="unit" id="tani">
           <option value="km2">km&sup2;</option>
           <option value="m2">m&sup2;</option>
         </select>
@@ -87,21 +84,21 @@
         </section>
 
         <ul>
-        <li><label>津山市</label><input type="text" id="tsuyamaarea"></li>
-        <li><label>宅地建物</label><input type="text" id="takuchiarea"></li>
-        <li><label>田畑</label><input type="text" id="tabataarea"></li>
-        <li><label>山林</label><input type="text" id="yamabayashiarea"></li>
-        <li><label>原野</label><input type="text" id="haranoarea"></li>
-        <li><label>雑種地</label><input type="text" id="zasshuchiarea"></li>
-        <li><label>墓地</label><input type="text" id="bochiarea"></li>
-        <li><label>池沼</label><input type="text" id="chishouarea"></li>
+          <li><label>津山市</label><input type="text" id="tsuyamaarea"></li>
+          <li><label>宅地建物</label><input type="text" id="takuchiarea"></li>
+          <li><label>田畑</label><input type="text" id="tabataarea"></li>
+          <li><label>山林</label><input type="text" id="yamabayashiarea"></li>
+          <li><label>原野</label><input type="text" id="haranoarea"></li>
+          <li><label>雑種地</label><input type="text" id="zasshuchiarea"></li>
+          <li><label>墓地</label><input type="text" id="bochiarea"></li>
+          <li><label>池沼</label><input type="text" id="chishouarea"></li>
         </ul>
 
-        <graph class="col-sm-12" id="compareContainer"></graph>
+        <figure class="col-sm-12" id="compareContainer"></figure>
       </article>
 
       <!-- ライセンス表記 -->
-      <pre class="block-center col-sm-12"><img src="./resources/by.png" alt="CC BY" style="width: 75px;" title="クリエイティブ・コモンズ"> 津山市</pre>
+      <a href="https://creativecommons.org/licenses/by/4.0/deed.ja"><pre class="block-center col-sm-12"><img src="./resources/by.png" alt="CC BY" style="width: 75px;" title="クリエイティブ・コモンズ"></a> 津山市</pre>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
