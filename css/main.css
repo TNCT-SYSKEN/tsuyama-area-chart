@@ -1,6 +1,14 @@
+html{
+  font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+}
+
 body{
   color: #333;
   background-color: #eee;
+}
+
+h1{
+  color: white;
 }
 
 .graphSection{
@@ -14,9 +22,13 @@ figure{
   height: 300px;
 }
 
-.header{
-  width: 100%;
-  height: auto;
+header{
+  background: url('../resources/office-933306_1920.png');
+  background-size: cover;
+  text-align: center;
+  width: 100vw;
+  height: 80vh;
+  padding-bottom: 2em;
 }
 
 #enviroSection{
