@@ -7,13 +7,17 @@ body{
   background-color: #eee;
 }
 
-h3{
-  text-align: center;
+a:link{
+  color: #53863C;
 }
 
-p{
-  margin-left: 3em;
-  margin-right: 3em;
+a:visited{
+  color: #53863C;
+}
+
+.sectionTitle{
+  text-align: center;
+  margin-bottom: 1ex;
 }
 
 #logo{
@@ -31,11 +35,15 @@ p{
   background-color: white;
   box-shadow: 0px 0px 10px #333;
   margin-bottom: 50px;
+  padding-top: 2ex;
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-bottom: 1ex;
 }
 
 figure{
-  width: 100px;
-  height: 300px;
+  width: 100%;
+  height: 400px;
 }
 
 header{
@@ -43,26 +51,30 @@ header{
   background-size: cover;
   text-align: center;
   width: 100vw;
-  height: 80vh;
+  padding-bottom: 20vh;
   margin-bottom: 2em;
 }
 
 #enviroSection{
-  background-image: url('../resources/a30-sunbeams-1904485_1920.png');
+  background-image: url('../resources/a15-sunbeams-1904485_1920.png');
   background-size: 100% auto;
 }
 
 #percentSection{
-  background-image: url('../resources/a30-japan-217878_1920.png');
-  background-size: 100% auto;
+  background-image: url('../resources/a15-japan-217878_1920.png');
+  background-size: auto 100%;
 }
 
 #vsSection{
   background-image: url('../resources/a30-boxing-gloves-1709174_1920.png');
-  background-size: auto 100%;
+  background-size: 100% auto;
 }
 
 #compareSection{
-  background-image: url('../resources/a30-folding-rule-1329781_1920.png');
+  background-image: url('../resources/a15-folding-rule-1329781_1920.png');
   background-size: auto 100%;
+}
+
+.copyright{
+  text-align: center;
 }

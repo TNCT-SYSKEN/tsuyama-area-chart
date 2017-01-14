@@ -2,16 +2,14 @@
   // environmentContainer
   var enviro_chart = new CanvasJS.Chart("enviroContainer",
   {
-    title: {
-    text: "二酸化炭素増加比"
-    },
     data: [{
       type: "column",
       dataPoints: [
         {label: "津山市", y: 5.27},
         {label: "岡山県", y: 73.91751132}
       ]}
-    ]
+    ],
+    backgroundColor: null
   });
   enviro_chart.render();
 
@@ -37,14 +35,12 @@
      proprietary_Property[i].y = proprietary_Property[i].y / all_Property * 100;
    }
     var percent_chart = new CanvasJS.Chart("percentContainer", {
-      title:{
-        text: "津山市私有財産割合"
-      },
       animationEnabled: false,
        data : [{
         type: "pie",
         dataPoints: proprietary_Property
-      }]
+      }],
+      backgroundColor: null
     });
 
     percent_chart.render();
@@ -52,9 +48,6 @@
     // Tsuyama vs Japan
     var vs_chart = new CanvasJS.Chart("vsContainer",
     {
-      title:{
-      text: "Tsuyama VS Japan"
-      },
       data: [{
         type: "column",
         dataPoints: [
@@ -62,7 +55,8 @@
           { label: "面積", y : 747 },
           { label: "借金", y : 14043 },
         ]}
-      ]
+      ],
+      backgroundColor: null
     });
 
     vs_chart.render();
@@ -76,7 +70,8 @@
     var compare_chart = new CanvasJS.Chart("compareContainer", {
       data: [{
         type: 'column',
-      }]
+      }],
+      backgroundColor: null
     });
 
     $('#resetbutton').click(function (){
