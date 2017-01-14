@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Tsuyama Area Chart</title>
-    <link rel="shortcut icon" href="./resources/favicon.png">
+    <link rel="shortcut icon" href="./resources/image/favicon.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/main.css">
@@ -12,7 +12,7 @@
   <body>
     <!-- ヘッダ -->
     <header>
-      <img id="logo" src="./resources/logo.png">
+      <img id="logo" src="./resources/image/logo.png">
       <h1 id="title">Tsuyama Area Chart</h1>
       <p id="title">津山市オープンデータ活用例集 ~津山市の面積からわかるいろいろ~</p>
     </header>
@@ -83,8 +83,8 @@
 
         <article class="col-sm-12 graphSection" id="compareSection">
           <h3 class="sectionTitle">津山市私有財産を単位にする</h3>
-          <p>入力された面積について津山市内それぞれの私有財産が何個分あるかを表示する。</p>
-          <p>東京ドーム〇個分という表現よりわかりやすいかもしれない。</p>
+          <p>入力された面積について津山市内それぞれの私有財産が何個分あるかに換算する。</p>
+          <p>東京ドーム〇個分という単位よりわかりやすいかもしれない。</p>
 
           <ul>
             <li>津山市の面積 506km&sup2;</li>
@@ -97,33 +97,33 @@
             <li>池沼 211715.00m&sup2;</li>
           </ul>
 
-          <label>入力したい面積→</label>
+          <label>換算したい面積の入力: </label>
           <input type="number" name="area" id="areaid">
-          <select name="unit" id="tani">
+          <select name="unit" id="unitSelector">
             <option value="km2">km&sup2;</option>
             <option value="m2">m&sup2;</option>
           </select>
-          <input class="btn btn-primary" type="button" value="比較" id="hikaku">
-          <input class="btn btn-warning" type="button" value="リセット" id="resetbutton">
+          <input type="button" value="比較" id="comparebtn">
+          <input type="button" value="リセット" id="resetbtn">
 
           <section>
             <label>入力例</label>
-            <input class="btn" type="button" value="日本の面積" id="japanarea">
-            <input class="btn" type="button" value="岡山県の面積" id="okayamakenarea">
-            <input class="btn" type="button" value="岡山市の面積" id="okayamashiarea">
-            <input class="btn" type="button" value="倉敷市の面積" id="kurashikishiarea">
-            <input class="btn" type="button" value="琵琶湖の面積" id="biwakoarea">
+            <input type="button" value="日本の面積" id="japanarea">
+            <input type="button" value="岡山県の面積" id="okayamaprefarea">
+            <input type="button" value="岡山市の面積" id="okayamacityarea">
+            <input type="button" value="倉敷市の面積" id="kurashikicityarea">
+            <input type="button" value="琵琶湖の面積" id="lakebiwaarea">
           </section>
 
           <ul>
-            <li><label>津山市</label><input type="text" id="tsuyamaarea"></li>
-            <li><label>宅地建物</label><input type="text" id="takuchiarea"></li>
-            <li><label>田畑</label><input type="text" id="tabataarea"></li>
-            <li><label>山林</label><input type="text" id="yamabayashiarea"></li>
-            <li><label>原野</label><input type="text" id="haranoarea"></li>
-            <li><label>雑種地</label><input type="text" id="zasshuchiarea"></li>
-            <li><label>墓地</label><input type="text" id="bochiarea"></li>
-            <li><label>池沼</label><input type="text" id="chishouarea"></li>
+            <li><label>津山市</label><span class="unitResult" id="tsuyamaarea"></span> 個分</li>
+            <li><label>宅地建物</label><span class="unitResult" id="estatearea"></span> 個分</li>
+            <li><label>田畑</label><span class="unitResult" id="fieldarea"></span> 個分</li>
+            <li><label>山林</label><span class="unitResult" id="forestarea"></span> 個分</li>
+            <li><label>原野</label><span class="unitResult" id="wildarea"></span> 個分</li>
+            <li><label>雑種地</label><span class="unitResult" id="hybridarea"></span> 個分</li>
+            <li><label>墓地</label><span class="unitResult" id="cemeteryarea"></span> 個分</li>
+            <li><label>池沼</label><span class="unitResult" id="swamparea"></span> 個分</li>
           </ul>
 
           <figure class="col-sm-12" id="compareContainer"></figure>
@@ -140,7 +140,7 @@
         <article class="col-sm-12 graphSection">
           <h3 class="sectionTitle">おわりに</h3>
           <p>今回のオープンデータ活用例は，津山市のオープンデータを使用させて頂いた。オープンデータのライセンスは以下のとおりである。</p>
-          <p><a href="https://creativecommons.org/licenses/by/4.0/deed.ja"><img src="./resources/by.png" alt="CC BY" style="width: 75px;" title="クリエイティブ・コモンズ・ライセンス"></a> <a href="https://www.city.tsuyama.lg.jp/life/index2.php?id=5530">津山市</a></p>
+          <p><a href="https://creativecommons.org/licenses/by/4.0/deed.ja"><img src="./resources/image/by.png" alt="CC BY" style="width: 75px;" title="クリエイティブ・コモンズ・ライセンス"></a> <a href="https://www.city.tsuyama.lg.jp/life/index2.php?id=5530">津山市</a></p>
           <p>最後に，このオープンデータに関する要望を以下にまとめた。</p>
           <ul>
             <li>学校等の定員数の追加</li>
@@ -168,6 +168,7 @@
         <pre class="center-block col-sm-12 copyright">Copyright &copy; 2017 SYSKEN</pre>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
         <script src="./js/app.js"></script>
       </div>

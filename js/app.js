@@ -62,10 +62,9 @@
     vs_chart.render();
 
     // compare
-    var TSUYAMA=506000000,TAKUCHI=130170,TABATA=640387,YAMABAYASHI=47795500,HARANO=50716,ZASSHUCHI=164937,BOCHI=10154,CHISHOU=211715;
-    var JAPAN=380000,OKAYAMAKEN=7112,OKAYAMASHI=790,KURASHIKISHI=355,BIWAKO=670;
-    var TOKYODOOM=0.047,TNCT=29144;
-    var m;
+    var TSUYAMA=506000000,ESTATE=130170,FIELD=640387,FOREST=47795500,WILD=50716,HYBRID=164937,CEMETERY=10154,SWAMP=211715;
+    var JAPAN=380000,OKAYAMAPREF=7112,OKAYAMACITY=790,KURASHIKICITY=355,LAKEBIWA=670;
+    var squareunit;
 
     var compare_chart = new CanvasJS.Chart("compareContainer", {
       data: [{
@@ -74,67 +73,72 @@
       backgroundColor: null
     });
 
-    $('#resetbutton').click(function (){
-      $('#areaid').val('');
-    });
     $('#japanarea').click(function () {
       $('#areaid').val(JAPAN);
-      $('#tani').val("km2");
+      $('#unitSelector').val("km2");
     });
-    $('#okayamakenarea').click(function () {
-      $('#areaid').val(OKAYAMAKEN);
-      $('#tani').val("km2");
+    $('#okayamaprefarea').click(function () {
+      $('#areaid').val(OKAYAMAPREF);
+      $('#unitSelector').val("km2");
     });
-    $('#okayamashiarea').click(function () {
-      $('#areaid').val(OKAYAMASHI);
-      $('#tani').val("km2");
+    $('#okayamacityarea').click(function () {
+      $('#areaid').val(OKAYAMACITY);
+      $('#unitSelector').val("km2");
     });
-    $('#kurashikishiarea').click(function () {
-      $('#areaid').val(KURASHIKISHI);
-      $('#tani').val("km2");
+    $('#kurashikicityarea').click(function () {
+      $('#areaid').val(KURASHIKICITY);
+      $('#unitSelector').val("km2");
     });
-    $('#biwakoarea').click(function () {
-      $('#areaid').val(BIWAKO);
-      $('#tani').val("km2");
+    $('#lakebiwaarea').click(function () {
+      $('#areaid').val(LAKEBIWA);
+      $('#unitSelector').val("km2");
     });
-    $('#hikaku').click(function () {
+    $('#comparebtn').click(function () {
 
-      if($('#tani').val()=="km2"){
-      m=1000000;
-    }else if($('#tani').val()=="m2"){
-      m=1;
+    if($('#unitSelector').val()=="km2"){
+      squareunit = 1000000;
+    }
+    else if($('#unitSelector').val()=="m2"){
+      squareunit = 1;
     }
 
-      var AREAint = parseInt($('#areaid').val());
-      var a,b,c,d,e,f,g,h;
-      a=parseInt(AREAint/TSUYAMA*m);
-      b=parseInt(AREAint/TAKUCHI*m);
-      c=parseInt(AREAint/TABATA*m);
-      d=parseInt(AREAint/YAMABAYASHI*m);
-      e=parseInt(AREAint/HARANO*m);
-      f=parseInt(AREAint/ZASSHUCHI*m);
-      g=parseInt(AREAint/BOCHI*m);
-      h=parseInt(AREAint/CHISHOU*m);
+    $('#resetbtn').click(function (){
+      $('#areaid').val('');
 
-      $('#tsuyamaarea').val(a);
-      $('#takuchiarea').val(b);
-      $('#tabataarea').val(c);
-      $('#yamabayashiarea').val(d);
-      $('#haranoarea').val(e);
-      $('#zasshuchiarea').val(f);
-      $('#bochiarea').val(g);
-      $('#chishouarea').val(h);
+      unitClear();
+    });
+
+      var AREAint = parseInt($('#areaid').val());
+      var tsuyamanum=parseInt(AREAint/TSUYAMA* squareunit);
+      var estatenum=parseInt(AREAint/ESTATE* squareunit);
+      var fieldnum=parseInt(AREAint/FIELD* squareunit);
+      var forestnum=parseInt(AREAint/FOREST* squareunit);
+      var wildnum=parseInt(AREAint/WILD* squareunit);
+      var hybridnum=parseInt(AREAint/HYBRID* squareunit);
+      var cemeterynum=parseInt(AREAint/CEMETERY* squareunit);
+      var swampnum=parseInt(AREAint/SWAMP* squareunit);
+
+      unitClear();
+
+      $('#tsuyamaarea').append(tsuyamanum);
+      $('#estatearea').append(estatenum);
+      $('#fieldarea').append(fieldnum);
+      $('#forestarea').append(forestnum);
+      $('#wildarea').append(wildnum);
+      $('#hybridarea').append(hybridnum);
+      $('#cemeteryarea').append(cemeterynum);
+      $('#swamparea').append(swampnum);
 
 
     var comparePlot = [
-      { label: "津山市",   y: a },
-      { label: "宅地建物", y: b },
-      { label: "田畑",   y: c },
-      { label: "山林", y: d },
-      { label: "原野", y: e },
-      { label: "雑種地", y: f },
-      { label: "墓地", y: g },
-      { label: "池沼", y: h }
+      { label: "津山市",   y: tsuyamanum },
+      { label: "宅地建物", y: estatenum },
+      { label: "田畑",   y: fieldnum },
+      { label: "山林", y: forestnum },
+      { label: "原野", y: wildnum },
+      { label: "雑種地", y: hybridnum },
+      { label: "墓地", y: cemeterynum },
+      { label: "池沼", y: swampnum }
 
     ];
     //========================================
@@ -146,3 +150,14 @@
 
   compare_chart.render();
 })();
+
+function unitClear(){
+  $('#tsuyamaarea').empty();
+  $('#estatearea').empty();
+  $('#fieldarea').empty();
+  $('#forestarea').empty();
+  $('#wildarea').empty();
+  $('#hybridarea').empty();
+  $('#cemeteryarea').empty();
+  $('#swamparea').empty();
+}
