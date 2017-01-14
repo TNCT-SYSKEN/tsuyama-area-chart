@@ -7,8 +7,13 @@ body{
   background-color: #eee;
 }
 
-h1{
-  color: white;
+h3{
+  text-align: center;
+}
+
+p{
+  margin-left: 3em;
+  margin-right: 3em;
 }
 
 #logo{
@@ -16,6 +21,10 @@ h1{
   width: 200px;
   height: auto;
   padding-top: 2em;
+}
+
+#title{
+  color: white;
 }
 
 .graphSection{
@@ -35,7 +44,7 @@ header{
   text-align: center;
   width: 100vw;
   height: 80vh;
-  padding-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 #enviroSection{

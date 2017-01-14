@@ -2,8 +2,8 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>津山市オープンデータ活用例</title>
-    <link rel="shortcut icon" href="./resources/logo.png">
+    <title>Tsuyama Area Chart</title>
+    <link rel="shortcut icon" href="./resources/favicon.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/main.css">
@@ -13,33 +13,58 @@
     <!-- ヘッダ -->
     <header>
       <img id="logo" src="./resources/logo.png">
-      <h1 id="title">Tsuyama City Open Data</h1>
+      <h1 id="title">Tsuyama Area Chart</h1>
+      <p id="title">津山市オープンデータ活用例集 ~津山市の面積からわかるいろいろ~</p>
     </header>
 
     <!-- データ本文 -->
     <div class="container">
       <div class="row">
         <article class="col-sm-12 graphSection" id="enviroSection">
+          <h3>二酸化炭素増加比を調べる</h3>
+          <p>1世帯あたりの二酸化炭素排出量と，山林1haあたりの二酸化炭素吸収量をもとに，津山市から1年間に排出される二酸化炭素量は吸収される量の何倍かを調べる。</p>
+          <p></p>
           <figure class="col-sm-12" id="enviroContainer"></figure>
 
-          <p>津山市と岡山県の二酸化炭素増加比の比較です。</p>
           <label>使用データ</label>
           <ul>
-            <li>津山市_面積_2015分_20161201</li>
+            <li><a href="https://www.city.tsuyama.lg.jp/life/index2.php?id=5530">津山市オープンデータページ | 津山市公式サイト</a></li>
+            <ul>
+              <li>津山市_面積_2015分_20161201</li>
+              <li>津山市_人口動態_2015分_20161201</li>
+            </ul>
+            <li><a href="http://www.rinya.maff.go.jp/j/sin_riyou/ondanka/20141113_topics2_2.html">森林はどのぐらいの量の二酸化炭素を吸収しているの？</a></li>
+            <li>http://www.pref.okayama.jp/page/detail-94766.html</li>
+            <ul>
+              <li>全文(425006_2742285_misc.pdf)</li>
+            </ul>
+            <li><a href="http://www.stat.go.jp/data/kokusei/2015/kekka.htm">統計局ホームページ/平成27年国勢調査/調査の結果</a></li>
+            <ul>
+              <li>人口等基本集計結果</li>
+            </ul>
           </ul>
         </article>
 
         <article class="col-sm-12 graphSection" id="percentSection">
+          <h3>津山市の私有財産の割合を調べる</h3>
+          <p>津山市私有財産面積から私有財産がどれだけの割合であるかを調べる。</p>
+          <p>割合から，学校の割合が高く，津山市が教育を重視している事，公園の割合が高く，敷地を活用することが可能だろうということなどを考えることができる。</p>
           <figure class="col-sm-12" id="percentContainer"></figure>
 
-          <p>津山市私有財産の割合をほげほげ</p>
-          <p>使用したデータは，ほげほげほげほげ</p>
+          <label>使用データ</label>
+          <ul>
+            <li><a href="https://www.city.tsuyama.lg.jp/life/index2.php?id=5530">津山市オープンデータページ | 津山市公式サイト</a></li>
+            <ul>
+              <li>津山市_面積_2015分_20161201</li>
+            </ul>
+          </ul>
         </article>
 
         <article class="col-sm-12 graphSection" id="vsSection">
+          <h3>津山市と日本の比較</h3>
+          <p>津山市と日本について様々な数値で対決させてみた。</p>
           <figure class="col-sm-12" id="vsContainer"></figure>
 
-          <p>津山市と日本について様々な数値で対決させてみました。</p>
           <label>使用データ</label>
           <ul>
             <li><a href="https://www.city.tsuyama.lg.jp/life/index2.php?id=5530">津山市オープンデータページ | 津山市公式サイト</a></li>
@@ -58,8 +83,9 @@
         </article>
 
         <article class="col-sm-12 graphSection" id="compareSection">
-          <p>ここでは、入力された面積について津山市内それぞれの私有財産が何個分あるかを表示します。</p>
-          <p>東京ドーム〇個分という表現よりわかりやすいかも！？</p>
+          <h3>津山市私有財産を単位にする</h3>
+          <p>入力された面積について津山市内それぞれの私有財産が何個分あるかを表示する。</p>
+          <p>東京ドーム〇個分という表現よりわかりやすいかもしれない。</p>
 
           <ul>
             <li>津山市の面積 506km&sup2;</li>
@@ -102,10 +128,44 @@
           </ul>
 
           <figure class="col-sm-12" id="compareContainer"></figure>
+
+          <label>使用データ</label>
+          <ul>
+            <li><a href="https://www.city.tsuyama.lg.jp/life/index2.php?id=5530">津山市オープンデータページ | 津山市公式サイト</a></li>
+            <ul>
+              <li>津山市_面積_2015分_20161201</li>
+            </ul>
+          </ul>
+        </article>
+
+        <article class="col-sm-12 graphSection">
+          <h3>おわりに</h3>
+          <p>今回のオープンデータ活用例は，津山市のオープンデータを使用させて頂いた。そこで，このオープンデータに関する要望を以下にまとめた。</p>
+          <ul>
+            <li>学校等の定員数の追加</li>
+            <li>施設面積</li>
+            <ul>
+              <li>市役所の面積</li>
+              <li>学校の面積</li>
+              <li>etc.</li>
+            </ul>
+            <li>データの整形</li>
+            <ul>
+              <li>単位(面積，金額，数)の統一</li>
+              <li>不要な空セルの削除</li>
+              <li>セル結合の解除</li>
+              <li></li>
+            </ul>
+            <li>CSVでの公開</li>
+              <ul>
+                <li>オープンデータの"機械判読に適したデータ形式"という方針に反しているため</li>
+              </ul>
+            <li>様々な種類のデータの公開</li>
+          </ul>
         </article>
 
         <!-- ライセンス表記 -->
-        <a href="https://creativecommons.org/licenses/by/4.0/deed.ja"><pre class="block-center col-sm-12"><img src="./resources/by.png" alt="CC BY" style="width: 75px;" title="クリエイティブ・コモンズ"></a> 津山市</pre>
+        <a href="https://creativecommons.org/licenses/by/4.0/deed.ja"><pre class="block-center col-sm-12"><img src="./resources/by.png" alt="CC BY" style="width: 75px;" title="クリエイティブ・コモンズ・ライセンス"></a> 津山市</pre>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
