@@ -7,6 +7,10 @@ body{
   background-color: #eee;
 }
 
+p{
+  margin-bottom: 1ex;
+}
+
 a:link{
   color: #53863C;
 }
@@ -40,6 +44,7 @@ input[type="button"]:hover{
 
 .sectionTitle{
   text-align: center;
+  font-weight: bold;
   margin-bottom: 1ex;
 }
 
@@ -80,7 +85,7 @@ header{
 
 #enviroSection{
   background-image: url('../resources/image/a15-sunbeams-1904485_1920.png');
-  background-size: 100% auto;
+  background-size: auto 100%;
 }
 
 #percentSection{
@@ -90,7 +95,7 @@ header{
 
 #vsSection{
   background-image: url('../resources/image/a30-boxing-gloves-1709174_1920.png');
-  background-size: 100% auto;
+  background-size: auto 100%;
 }
 
 #compareSection{
